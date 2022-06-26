@@ -1,0 +1,32 @@
+﻿<Window x:Class="Prielbrusye.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prielbrusye"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="500" Width="800" MaxHeight="500" MaxWidth="800" MinHeight="500" MinWidth="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200">
+            </RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Background="#76e383" Grid.Row="0" Orientation="Vertical">
+            <Image Height="100" Margin="0 25 0 0">
+                <Image.Source>/Resources/logo.png</Image.Source>
+            </Image>
+            <TextBlock Style="{StaticResource headline_hat}" Text="Приэльбрусье" FontSize="30" Margin="0 15 0 0"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Style="{StaticResource headline_content}" HorizontalAlignment="Center" Text="Авторизация" Margin="0 10 0 0"></TextBlock>
+            <Label Content="Логин" Margin="30 10 0 0" FontFamily="Comic Sans MS" FontSize="16" Foreground="DimGray"></Label>
+            <TextBox Name="tbox_login" Style="{StaticResource textbox_style}"/>
+            <Label Content="Пароль" Margin="30 10 0 0" FontFamily="Comic Sans MS" FontSize="16" Foreground="DimGray"></Label>
+            <PasswordBox x:Name="tbox_pass_mask" Style="{StaticResource passwordbox_style}"/>
+            <TextBox x:Name="tbox_pass_open" Style="{StaticResource textbox_style}" Margin="0 -30 0 0" Visibility="Hidden"></TextBox>
+            <Button x:Name="btn_show_pass" Click="btn_show_pass_Click" Content="+" Width="30" Height="30" Margin="290 -30 0 0" FontFamily="Comic Sans MS" FontSize="17"></Button>
+            <Button x:Name="btn_login" Click="btn_login_Click" Style="{StaticResource button_style}" Margin="0 30 0 0" Content="Войти"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

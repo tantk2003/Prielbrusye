@@ -1,0 +1,46 @@
+﻿<Window x:Class="Prielbrusye.Captcha"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prielbrusye"
+        mc:Ignorable="d"
+        IsVisibleChanged="Window_IsVisibleChanged"
+        Title="Капча" Height="500" Width="800" MaxHeight="500" MaxWidth="800" MinHeight="500" MinWidth="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource headline_content}" Text="Введите капчу" VerticalAlignment="Bottom" HorizontalAlignment="Center"></TextBlock>
+        <StackPanel Grid.Row="1" Background="LightGray" Height="150" Width="250" Margin="0 0 0 80" Orientation="Horizontal">
+            <StackPanel.Effect>
+                <BlurEffect Radius="4"></BlurEffect>
+            </StackPanel.Effect>
+            <Label x:Name="captcha_letter1" Content="Z" Foreground="Red" FontSize="60" Margin="80 0 0 0">
+                <Label.RenderTransform>
+                    <RotateTransform Angle="30"></RotateTransform>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="captcha_letter2" Content="x" Foreground="DarkRed" FontSize="70" Margin="-40 0 0 0">
+                <Label.RenderTransform>
+                    <RotateTransform Angle="10"></RotateTransform>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="captcha_letter3" Content="C" Foreground="Black" FontSize="35" Margin="-20 24 0 0"></Label>
+            <Label x:Name="captcha_letter4" Content="O" Foreground="Yellow" FontSize="50" Margin="-28 20 0 0">
+                <Label.RenderTransform>
+                    <RotateTransform Angle="-30"></RotateTransform>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="captcha_letter5" Content="y" Foreground="Blue" FontSize="40" Margin="30 13 0 0">
+                <Label.RenderTransform>
+                    <RotateTransform Angle="20"></RotateTransform>
+                </Label.RenderTransform>
+            </Label>
+            <Polyline x:Name="line" Points="10 60, 60 50, 90 60, 130 40, 170 70" Stroke="Gray" StrokeThickness="4" Margin="-185 0 0 0"></Polyline>
+        </StackPanel>
+        <Button x:Name="btn_reload_captcha" Grid.Row="1" Width="100" Height="40" Style="{StaticResource button_style}" Content="Обновить" Margin="390 -70 0 0" Click="btn_reload_captcha_Click"></Button>
+        <TextBox x:Name="tbox_captcha" Grid.Row="1" Style="{StaticResource textbox_style}" Margin="0 130 0 0" KeyUp="tbox_captcha_KeyUp"></TextBox>
+    </Grid>
+</Window>
